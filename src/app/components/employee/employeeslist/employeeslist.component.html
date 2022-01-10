@@ -1,0 +1,32 @@
+<div class="search-div">
+  <button mat-raised-button routerLink='/addemployee'>
+    <mat-icon>add</mat-icon>New Employee
+  </button>
+  <mat-form-field class="search-form-field" floatLabel="never">
+    <input matInput  [(ngModel)]="searchKey" placeholder="Search Employee" autocomplete="off" (keyup)="applyFilter()">
+    <button mat-button matSuffix mat-icon-button areal-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+<div class="row">
+  <div class="column" *ngFor="let employee of employees">
+      <mat-card class="mat-elevation-z4" >
+          <img mat-card-image src="https://www.centrik.in/wp-content/uploads/2017/02/user-image-.png">
+          <mat-card-title>{{employee.firstName+' '+employee.lastName}}</mat-card-title>
+          <mat-card-subtitle><b>{{employee.designation}}</b></mat-card-subtitle>
+          <button mat-button color="warn" routerLink='/employeedetails/{{employee.employeeId}}'>View Profile</button>
+      </mat-card> 
+  </div>
+</div> 
+
+
+<!-- <mat-paginator [pageSizeOptions]="[10, 20, 30]" [pageSize]="6"></mat-paginator> -->
+
+
+
+ 
+
+  
+

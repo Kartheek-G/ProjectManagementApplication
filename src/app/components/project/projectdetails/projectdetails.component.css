@@ -1,0 +1,75 @@
+.controles-container {
+  width: 100%;
+  padding: 10%;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.controles-container > * {
+  width: 100%;
+}
+
+.card-wrapper {
+  margin: 5px;
+  background-color: thistle;
+}
+
+.header {
+  padding: 20px;
+  align-items: center;
+  color: white;
+  background-color: darkslategray;
+}
+
+.about {
+  background-color: cornflowerblue;
+  padding: 10px;
+  text-align: left;
+  color: white;
+  padding-left: 70px;
+}
+
+.profile p {
+  text-align: center;
+  color: navajowhite;
+  font-size: 50px;
+}
+
+.profiletile {
+  background-color: cornflowerblue;
+  color: whitesmoke;
+  padding: 10px;
+  text-align: left;
+}
+
+.projectstile {
+  padding: 10px;
+  text-align: left;
+}
+
+.projectcontent {
+  margin-top: 5px;
+}
+
+.buttons {
+  align-content: center;
+  text-align: center;
+}
+
+.addemployee {
+  margin-top: 10%;
+}
+
+.normal-form {
+  text-align: center;
+}
+
+.button-row {
+  margin-right: 2%;
+}
+
+.icons {
+  padding: 5px;
+}

@@ -1,0 +1,51 @@
+<div class="header">
+    <mat-card-header>
+      <mat-card-title>{{project.projectTitle | uppercase}}</mat-card-title>
+      <div class="spacer"></div>
+      <mat-icon class="icons"(click)='doUpdate(project.projectId)'>edit</mat-icon>
+      <mat-icon class="icons" (click)='onDelete(project.projectId)'>delete</mat-icon>
+      <mat-icon [routerLink]="['/allprojects']">exit_to_app</mat-icon>
+    </mat-card-header>
+  </div>
+<mat-grid-list cols="3" rowHeight="100px">
+    <mat-grid-tile class="profiletile" [colspan] = "2"[rowspan] = "4">
+      <div class="controles-container">
+        <div class="profilecontent">
+          <label>Project ID</label>
+          <h3>{{project.projectId}}</h3>
+          <label>Description</label>
+          <h3>{{project.projectDescription}} </h3>
+          <label>Status</label>
+          <h3>{{project.projectStatus}} </h3>
+          <label>Project start date</label>
+          <h3>{{project.startDate | date}}</h3>
+          <label>Expected end date</label>
+          <h3>{{project.endDate | date}}</h3>
+          </div>
+        </div>
+        
+    </mat-grid-tile>
+
+    <mat-grid-tile class="projectstile" [colspan] = "1"[rowspan] = "4">
+      <div class="controles-container">
+        <form [formGroup]="allocationService.allocationForm" class="normal-form">
+            <mat-form-field>
+                <input formControlName="EmployeeId" matInput placeholder="Enter 4 digit Employee ID">
+                <mat-error>This field is mandatory.</mat-error>
+            </mat-form-field>
+            <div class="button-row">
+                <button mat-raised-button color="primary" type="submit" [disabled]="allocationService.allocationForm.invalid" (click)="onSubmit()">Submit</button>
+            </div>
+        </form>
+        <div *ngFor="let allocation of allocations">  
+          <mat-card class="mat-elevation-z4" >
+            <mat-card-title class="title">{{allocation.employeeId}}</mat-card-title>
+            <mat-icon class="icons">visibility</mat-icon>
+            <mat-icon class="icons"(click)='onDeleteEmp(allocation.allocationId)'>delete</mat-icon>
+        </mat-card> 
+      </div>
+        
+        
+      </div>
+    </mat-grid-tile>
+</mat-grid-list>

@@ -1,0 +1,54 @@
+.controles-container {
+  width: 100%;
+  padding: 10%;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.controles-container > * {
+  width: 100%;
+}
+
+.card-wrapper {
+  margin: 5px;
+  background-color: thistle;
+}
+
+.header {
+  padding: 20px;
+  align-items: center;
+  color: darkslategrey;
+  background-color: #c3e2d6;
+}
+
+.about {
+  background-color: #c3e2d6;
+  padding: 10px;
+  text-align: left;
+  color: darkslategrey;
+  padding-left: 70px;
+}
+
+.profile p {
+  text-align: left;
+  color: darkslategrey;
+  font-size: 40px;
+}
+
+.profiletile {
+  background-color: paleturquoise;
+  color: darkslategrey;
+  padding: 10px;
+  text-align: left;
+}
+
+.projectstile {
+  padding: 5px;
+  text-align: left;
+}
+
+.icons {
+  padding: 5px;
+}

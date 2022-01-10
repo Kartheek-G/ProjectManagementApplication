@@ -1,0 +1,66 @@
+
+<div class="card-wrapper">
+    <mat-card class="example-card">
+      <div class="header">
+        <mat-card-header>
+          <img class="profileimage" src="https://www.centrik.in/wp-content/uploads/2017/02/user-image-.png" mat-card-avatar />
+          <mat-card-title>{{employee.firstName+' '+employee.lastName | uppercase}}</mat-card-title>
+          <mat-card-subtitle>
+            {{employee.designation}}
+          </mat-card-subtitle>
+          <div class="spacer"></div>
+          <mat-icon class="icons" (click)='doUpdate(employee.employeeId)'>edit</mat-icon>
+          <!-- <mat-icon class="icons" (click)='doUpdateEmp(employee)'>edit</mat-icon> -->
+          <mat-icon class="icons" (click)='onDelete(employee.employeeId)'>delete</mat-icon>
+          <mat-icon class="icons" [routerLink]="['/allemployees']">exit_to_app</mat-icon>
+        </mat-card-header>
+      </div>
+      
+      <mat-card-content>
+        <div class="about">
+          <h1>ABOUT</h1>
+          <p>
+            Enthusiastic Junior Project Manager with a proven history of successful work with cross-functional teams. With over 5+ years of work experience at Agile, along with a PMP-Certification, seeking to deliver excellent project management to Google.
+          </p>
+        </div>
+        
+        <mat-grid-list cols="4" rowHeight="120px">
+            <mat-grid-tile class="profiletile" [colspan] = "3"[rowspan] = "4">
+              <div class="controles-container">
+                
+                <div class="profilecontent">
+                  <label>Name : </label>
+                  <h1>{{employee.firstName+' '+employee.lastName}}</h1>
+                  <label>Employee ID :</label>
+                  <h1> {{employee.employeeId}} </h1>
+                  <label>Designation :  </label>
+                  <h1>{{employee.designation}}</h1>
+                  <label>Email: </label>
+                  <h1>{{employee.email}}</h1>
+                  <label>Mobile :</label>
+                  <h1> {{employee.mobileNumber}}</h1>
+                  <label>Gender : </label>
+                  <h1>{{employee.gender}}</h1>
+                  <label>Date of Joining : </label>
+                  <h1>{{employee.dateOfJoining | date}}</h1>
+                  </div>
+                </div>
+                
+            </mat-grid-tile>
+
+            <mat-grid-tile class="projectstile" [colspan] = "1"[rowspan] = "4">
+              <div class="controles-container">
+                <div *ngFor="let allocation of allocations">  
+                  <mat-card class="mat-elevation-z4" >
+                    <mat-card-title class="title">{{allocation.projectId}}</mat-card-title>
+                    <mat-icon class="icons">visibility</mat-icon>
+                </mat-card> 
+                </div>
+              </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card-content>
+    </mat-card>
+  
+  </div>
+

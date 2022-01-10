@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: cadetblue;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {
+  margin: 2 -5px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.mat-elevation-z4 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 20px;
+  text-align: center;
+  color: rgb(37, 14, 14);
+  background-color: paleturquoise;
+  margin: 10px;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.search-div {
+  margin: 10px;
+}
+
+.search-form-field {
+  width: 60%;
+  margin-left: 10%;
+  padding: 5px 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.search-form-field div.mat-form-underline {
+  display: none;
+}
+
+.search-form-field div.mat-form-infix {
+  border-top: 0px;
+}
+
+.search-form-field div.mat-form-wrapper {
+  padding-bottom: 0px;
+}
+
+.search-form-field div.mat-form-suffix button {
+  height: 32px;
+  width: 32px;
+}

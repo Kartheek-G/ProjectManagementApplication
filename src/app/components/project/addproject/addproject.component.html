@@ -1,0 +1,65 @@
+
+<div class="header">
+    <h1>NEW PROJECT</h1>
+</div>
+<form [formGroup]="projectService.projectForm" class="normal-form">
+    <mat-grid-list cols="3" rowHeight="400px">
+        <mat-grid-tile>
+            
+        </mat-grid-tile>
+        <mat-grid-tile class="formarea">
+            <div class="controles-container">
+                <mat-form-field>
+                    <input formControlName="ProjectTitle" matInput placeholder="Project Name">
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="ProjectDescription" matInput placeholder="Project Description">
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select formControlName="ProjectStatus" placeholder="Project Status">
+                        <mat-option>None</mat-option>
+                        <ng-container *ngFor="let status of projectStatus">
+                            <mat-option value="{{status.value}}">{{status.value}}</mat-option>
+                        </ng-container>
+                    </mat-select>
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input formControlName="StartDate" matInput [matDatepicker]="pickerstart" placeholder="Project Start Date">
+                    <mat-datepicker-toggle matSuffix [for]="pickerstart"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerstart></mat-datepicker>
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="EndDate" matInput [matDatepicker]="pickerend" placeholder="Expected End Date">
+                    <mat-datepicker-toggle matSuffix [for]="pickerend"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerend></mat-datepicker>
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+                
+                <div class="button-row">
+                    <button mat-raised-button color="primary" type="submit" [disabled]="projectService.projectForm.invalid" (click)="onSubmit()">Submit</button>
+                    <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+                </div>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <!-- <div class="controles-container">
+                <form [formGroup]="allocationService.allocationForm" class="normal-form">
+                    <mat-form-field>
+                        <input formControlName="EmployeeId" matInput placeholder="Enter 4 digit Employee ID">
+                        <mat-error>This field is mandatory.</mat-error>
+                    </mat-form-field>
+                    <div class="button-row">
+                        <button mat-raised-button color="primary" type="submit" [disabled]="allocationService.allocationForm.invalid" (click)="onSubmitEmp()">Submit</button>
+                    </div>
+                </form>
+            </div> -->
+        </mat-grid-tile>
+    </mat-grid-list>
+
+</form>
